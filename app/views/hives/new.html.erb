@@ -5,6 +5,8 @@
 
 <%= bootstrap_form_for @hive do |f| %>
   <%= f.text_field :nickname, label: 'hive name' %>
+  <%= f.number_field :location%>
+  <p>please give myHive a valid US zip code so that we can store weather data for you in your inspections!</p>
   <%= f.date_select :creation_date, label: 'hive name'  %>
   <%= f.select :creation_method, [["package", "package"], ["split", "split"], ["swarm", "swarm"]], label: 'creation method' %>
   <%= f.text_field :breed  %>

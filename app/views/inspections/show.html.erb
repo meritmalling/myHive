@@ -1,6 +1,10 @@
 <div class='row'>
 <%= link_to "&larr; back".html_safe, hives_path %>
-    <h4><%= @hive.nickname %></h4>
+
+    <p><strong>weather:</strong> <%= @inspection.weather_main %></p>
+    <p><strong>temp:</strong> <%= @inspection.weather_temp %></p>
+    <p><strong>wind speed:</strong> <%= @inspection.weather_wind_speed %></p>
+    <p><strong>wind direction:</strong> <%= @inspection.weather_wind_direction %></p>
     <p><strong>temperment:</strong> <%= @inspection.temperment %></p>
     <p><strong>laying_pattern:</strong> <%= @inspection.laying_pattern %></p>
     <p><strong>uncapped_brood:</strong> <%= @inspection.uncapped_brood %></p>
@@ -21,7 +25,7 @@
     <p><strong>eggs:</strong> <%= @inspection.eggs %></p>
     <p><strong>queen_cells:</strong> <%= @inspection.queen_cells %></p>
     <p><strong>notes:</strong> <%= @inspection.notes %></p>
-    <p><strong>pests:</strong> <% @inspection.pests.each do |p| %> <%= p %><% end %></p>
+
 </div>
 
 

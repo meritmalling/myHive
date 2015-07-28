@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'rest-client'
+
+gem 'awesome_print'
+
 gem 'bootstrap_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

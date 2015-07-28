@@ -39,7 +39,7 @@ class HivesController < ApplicationController
   end
 
   def show
-    @hive = Hive.find params[:id]
+    @hive = Hive.find(params[:id])
   end
 
   private

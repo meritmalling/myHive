@@ -3,15 +3,17 @@ class InspectionsController < ApplicationController
 before_action :is_authenticated
 
    def index
-    @inspection= Inspection.all
+    @inspections = Inspection.all
    end
 
    def new
     @inspection = Inspection.new
+    @data = hive_weather
    end
 
    def create
-    @current_user.hives.inspections.create inspection_params
+    hive = Hive.find(params[:hive_id])
+    @inspection = hive.inspections.create inspection_params
     redirect_to hives_path
    end
 
@@ -44,8 +46,19 @@ before_action :is_authenticated
 
   private
 
-  def hive_params
+  def inspection_params
     params.require(:inspection).permit(:temperment, :laying_pattern, :uncapped_brood, :capped_brood, :population, :drone_population, :drone_cells, :honey, :nectar, :pollen, :syrup, :pollen_sub, :medicine, :add_super, :remove_super, :re_queen, :queen, :eggs, :queen_cells, :notes)
+  end
+
+  def hive_weather
+    require 'rest-client'
+    require 'awesome_print'
+    zipcode = Hive.find(params[:hive_id]).location
+    response = RestClient.get(
+      "api.openweathermap.org/data/2.5/weather?zip=" + zipcode.to_s + ",us")
+
+    data = JSON.parse(response.body)
+
   end
 
 end

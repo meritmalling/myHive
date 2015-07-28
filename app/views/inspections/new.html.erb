@@ -4,6 +4,11 @@
 </div>
 
 <%= bootstrap_form_for :inspection do |f| %>
+  <%= f.date_select :inspection_date, label: "date"%>
+  <h4>weather</h4>
+  <%= f.text_field :weather_main, label: "description", value: "#{@data['weather'][0]['description']}"%>
+  <%= f.number_field :weather_temp, label: "temp", value: @data["main"]["temp"]%>
+  <%= f.number_field :weather_wind_speed, label: "wind speed", value: @data["wind"]["speed"]%>
   <h4>population </h4>
   <%= f.form_group :temperment, label: { text: "temperment" } do %>
     <%= f.radio_button :temperment, 0, label: "calm", inline: true %>
@@ -34,7 +39,7 @@
     <%= f.radio_button :eggs, false, label: "no", inline: true %>
   <% end %>
   <%= f.form_group :laying_pattern, label: { text: "laying pattern" } do %>
-    <%= f.radio_button :laying_pattern, 0, label: "poor", inline: true %>
+    <%= f.radio_button :laying_pattern, "poor", label: "poor", inline: true %>
     <%= f.radio_button :laying_pattern, 1, label: "medicore", inline: true %>
     <%= f.radio_button :laying_pattern, 2, label: "great", inline: true %>
   <% end %>

@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :inspections
   end
 
-  post '/hives/:hive_id/inspections/:id/create' => 'inspections#create' as: 'create_hive_path'
+  post '/hives/:hive_id/inspections/new' => 'inspections#create', as: 'create_hive_path'
 
 
   # Example of regular route:
