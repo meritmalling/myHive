@@ -1,0 +1,7 @@
+<%= bootstrap_form_for @user do |f| %>
+<div class="modal-body">
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.primary "sign up for my hive" %>
+</div>
+<% end %>

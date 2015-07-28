@@ -1,0 +1,13 @@
+<div class='row'>
+<h2>@hive.nickname</h2>
+</div>
+<table>
+    <% @inspections.each do |i| %>
+     <% if i.inspection_for @hive %>
+    <td>
+      <tr><%= inspection.date, i %></tr>
+    </td>
+    <% end %>
+</table>
+<% end %>
+

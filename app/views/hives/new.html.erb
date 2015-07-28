@@ -1,0 +1,15 @@
+<div class='row'>
+  <h2>congratulations, you have new bees!</h2>
+  <h4>add your hive to your myHive apiary below</h4>
+</div>
+
+<%= bootstrap_form_for @hive do |f| %>
+  <%= f.text_field :nickname, label: 'hive name' %>
+  <%= f.date_select :creation_date, label: 'hive name'  %>
+  <%= f.select :creation_method, [["package", "package"], ["split", "split"], ["swarm", "swarm"]], label: 'creation method' %>
+  <%= f.text_field :breed  %>
+  <%= f.select :type, [["langstroth", "langstroth"], ["top-bar", "top-bar"], ["warre", "warre"]], label: 'type' %>
+  <%= f.number_field :supers %>
+  <%= f.text_field :notes%>
+  <%= f.primary "add hive" %>
+<% end %>

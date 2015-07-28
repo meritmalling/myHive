@@ -5,6 +5,27 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  root 'main#index'
+
+  get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
+
+  get 'home' => 'main#index'
+  get 'about' => 'main#about'
+  get 'beekeeping' => 'main#beekeeping'
+
+
+  resources :users
+
+  resources :hives do
+    resources :inspections
+  end
+
+  post '/hives/:hive_id/inspections/:id/create' => 'inspections#create' as: 'create_hive_path'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

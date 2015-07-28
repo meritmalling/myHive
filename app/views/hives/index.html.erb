@@ -1,0 +1,15 @@
+<div class='row'>
+<h2>myApiary</h2>
+  <%= link_to 'add a hive', new_hive_path %>
+</div>
+<table>
+    <% @hives.each do |h| %>
+     <% if h.hive_owner @current_user %>
+    <td>
+      <tr> <img class='hiveicon' src='http://thegraphicsfairy.com/wp-content/uploads/2013/01/BeeHiveVintageGraphicsFairy3.jpg'></tr>
+      <tr><%= link_to "#{h.nickname}", h %></tr>
+    </td>
+    <% end %>
+</table>
+<% end %>
+

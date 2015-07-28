@@ -1,0 +1,86 @@
+<div class='row'>
+  <h2>inspection log</h2>
+  <h4>add your observations below</h4>
+</div>
+
+<%= bootstrap_form_for :inspection do |f| %>
+  <h4>population </h4>
+  <%= f.form_group :temperment, label: { text: "temperment" } do %>
+    <%= f.radio_button :temperment, 0, label: "calm", inline: true %>
+    <%= f.radio_button :temperment, 1, label: "agitated", inline: true %>
+    <%= f.radio_button :temperment, 2, label: "aggressive", inline: true %>
+  <% end %>
+  <%= f.form_group :drone_population, label: { text: "drone population" } do %>
+    <%= f.radio_button :drone_population, 0, label: "low", inline: true %>
+    <%= f.radio_button :drone_population, 1, label: "medium", inline: true %>
+    <%= f.radio_button :drone_population, 2, label: "high", inline: true %>
+  <% end %>
+  <%= f.form_group :drone_cells, label: { text: "drone cells" } do %>
+    <%= f.radio_button :drone_cells, 0, label: "low", inline: true %>
+    <%= f.radio_button :drone_cells, 1, label: "medium", inline: true %>
+    <%= f.radio_button :drone_cells, 2, label: "high", inline: true %>
+  <% end %>
+   <%= f.form_group :queen_cells, label: { text: "queen cells" } do %>
+    <%= f.radio_button :queen_cells, true, label: "yes", inline: true %>
+    <%= f.radio_button :queen_cells, false, label: "no", inline: true %>
+  <% end %>
+  <h4>queen & laying</h4>
+  <%= f.form_group :queen, label: { text: "saw queen" } do %>
+    <%= f.radio_button :queen, true, label: "yes", inline: true %>
+    <%= f.radio_button :queen, false, label: "no", inline: true %>
+  <% end %>
+  <%= f.form_group :eggs, label: { text: "saw eggs" } do %>
+    <%= f.radio_button :eggs, true, label: "yes", inline: true %>
+    <%= f.radio_button :eggs, false, label: "no", inline: true %>
+  <% end %>
+  <%= f.form_group :laying_pattern, label: { text: "laying pattern" } do %>
+    <%= f.radio_button :laying_pattern, 0, label: "poor", inline: true %>
+    <%= f.radio_button :laying_pattern, 1, label: "medicore", inline: true %>
+    <%= f.radio_button :laying_pattern, 2, label: "great", inline: true %>
+  <% end %>
+  <%= f.form_group :uncapped_brood, label: { text: "uncapped brood" } do %>
+    <%= f.radio_button :uncapped_brood, 0, label: "low", inline: true %>
+    <%= f.radio_button :uncapped_brood, 1, label: "medium", inline: true %>
+    <%= f.radio_button :uncapped_brood, 2, label: "high", inline: true %>
+  <% end %>
+  <%= f.form_group :capped_brood, label: { text: "capped brood" } do %>
+    <%= f.radio_button :capped_brood, 0, label: "low", inline: true %>
+    <%= f.radio_button :capped_brood, 1, label: "medium", inline: true %>
+    <%= f.radio_button :capped_brood, 2, label: "high", inline: true %>
+  <% end %>
+  <%= f.form_group :population, label: { text: "population" } do %>
+    <%= f.radio_button :population, 0, label: "low", inline: true %>
+    <%= f.radio_button :population, 1, label: "medium", inline: true %>
+    <%= f.radio_button :population, 2, label: "high", inline: true %>
+  <% end %>
+
+  <h4>food reserves</h4>
+  <%= f.form_group :honey, label: { text: "honey" } do %>
+    <%= f.radio_button :honey, 0, label: "low", inline: true %>
+    <%= f.radio_button :honey, 1, label: "medium", inline: true %>
+    <%= f.radio_button :honey, 2, label: "high", inline: true %>
+  <% end %>
+  <%= f.form_group :nectar, label: { text: "nectar" } do %>
+    <%= f.radio_button :nectar, 0, label: "low", inline: true %>
+    <%= f.radio_button :nectar, 1, label: "medium", inline: true %>
+    <%= f.radio_button :nectar, 2, label: "high", inline: true %>
+  <% end %>
+  <%= f.form_group :pollen, label: { text: "pollen" } do %>
+    <%= f.radio_button :pollen, 0, label: "low", inline: true %>
+    <%= f.radio_button :pollen, 1, label: "medium", inline: true %>
+    <%= f.radio_button :pollen, 2, label: "high", inline: true %>
+  <% end %>
+  <h4>actions</h4>
+    <%= f.text_field :syrup, label: "feed sugar syrup"%>
+    <%= f.text_field :pollen_sub, label: "feed pollen supplement"%>
+    <%= f.text_field :medicine, label: "medicated"%>
+    <%= f.number_field :add_super %>
+    <%= f.number_field :remove_super %>
+    <%= f.form_group :re_queen, label: { text: "requeened?" } do %>
+      <%= f.radio_button :re_queen, true, label: "yes", inline: true %>
+    <% end %>
+  <h4>notes</h4>
+    <%= f.text_field :notes%>
+  <%= f.primary "add inspection" %>
+<% end %>
+

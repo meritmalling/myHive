@@ -1,0 +1,27 @@
+<div class='row'>
+<%= link_to "&larr; back".html_safe, hives_path %>
+    <h4><%= @hive.nickname %></h4>
+    <p><strong>temperment:</strong> <%= @inspection.temperment %></p>
+    <p><strong>laying_pattern:</strong> <%= @inspection.laying_pattern %></p>
+    <p><strong>uncapped_brood:</strong> <%= @inspection.uncapped_brood %></p>
+    <p><strong>capped_brood:</strong> <%= @inspection.capped_brood %></p>
+    <p><strong>population:</strong> <%= @inspection.population %></p>
+    <p><strong>drone_population:</strong> <%= @inspection.drone_population%></p>
+    <p><strong>drone_cells:</strong> <%= @inspection.drone_cells %></p>
+    <p><strong>honey:</strong> <%= @inspection.honey %></p>
+    <p><strong>nectar:</strong> <%= @inspection.nectar %></p>
+    <p><strong>pollen:</strong> <%= @inspection.pollen %></p>
+    <p><strong>syrup:</strong> <%= @inspection.syrup %></p>
+    <p><strong>pollen_sub:</strong> <%= @inspection.pollen_sub %></p>
+    <p><strong>medicine:</strong> <%= @inspection.medicine %></p>
+    <p><strong>add_super:</strong> <%= @inspection.add_super %></p>
+    <p><strong>remove_super:</strong> <%= @inspection.remove_super %></p>
+    <p><strong>re_queen:</strong> <%= @inspection.re_queen %></p>
+    <p><strong>queen:</strong> <%= @inspection.queen %></p>
+    <p><strong>eggs:</strong> <%= @inspection.eggs %></p>
+    <p><strong>queen_cells:</strong> <%= @inspection.queen_cells %></p>
+    <p><strong>notes:</strong> <%= @inspection.notes %></p>
+    <p><strong>pests:</strong> <% @inspection.pests.each do |p| %> <%= p %><% end %></p>
+</div>
+
+
