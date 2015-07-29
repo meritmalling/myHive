@@ -1,15 +1,11 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">myHive</a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "myHives", hives_path%></li>
-        <li><%= link_to "myArchives", hives_path%></li>
-        <li><%= link_to "myPreferences", hives_path%></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+<nav>
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><%= link_to "myHives", hives_path%><</li>
+          <li><%= link_to "myArchives", hives_path%></li>
+          <li><%= link_to "myPreferences", hives_path%></li>
+        </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>
           <% if @current_user %>
           <%= link_to "#{@current_user.email}", hives_path  %>
@@ -22,6 +18,4 @@
         </li>
       </ul>
     </div>
-  </div>
-</nav>
-
+  </nav>

@@ -3,16 +3,16 @@
   <h5>add your observations below</h5>
 </div>
 
-<%= form_for [@hive, @inspection] do |f| %>
+<%= bootstrap_form_for [@hive, @inspection] do |f| %>
     <%= f.date_field :inspection_date%>
     <%= f.text_field :notes, placeholder: 'notes'%>
   <h5>weather</h5>
     <%= label_tag(:weather_main, "description") %>
     <%= f.text_field :weather_main, value: "#{@data['weather'][0]['description']}"%>
-    <%= label_tag(:weather_temp, "temp") %>
-    <%= f.number_field :weather_temp, value: @data["main"]["temp"]%>
-    <%= label_tag(:weather_wind_speed, "wind speed") %>
-    <%= f.number_field :weather_wind_speed, value: @data["wind"]["speed"]%>
+    <%= label_tag(:temp, "temp") %>
+    <%= f.number_field :temp, :class => 'text_field', :step => 'any', value: @data["main"]["temp"]%>
+    <%= label_tag(:wind_speed, "wind speed") %>
+    <%= f.number_field :wind_speed, :class => 'text_field', :step => 'any', value: @data["wind"]["speed"]%>
   <h5>population </h5>
     <%= label_tag(:temperment, "temperment: calm to agressive") %>
     <%= f.range_field :temperment,in: 0..10 %>
@@ -20,8 +20,6 @@
     <%= f.range_field :drone_population, in: 0..10 %>
     <%= label_tag(:drone_cells, "number of drone cells") %>
     <%= f.range_field :drone_cells, in: 0..10 %>
-    <%= label_tag(:queen_cells, "number of queen cells") %>
-    <%= f.range_field :queen_cells, in: 0..10 %>
   <h5>queen & laying</h5>
     <%= label_tag(:population, "population: low to high") %>
     <%= f.range_field :population, in: 0..10 %>
@@ -31,12 +29,15 @@
     <%= f.range_field :uncapped_brood, in: 0..10 %>
     <%= label_tag(:capped_brood, "capped brood") %>
     <%= f.range_field :capped_brood, in: 0..10 %>
-    <%= check_box_tag (:queen) %>
-    <%= label_tag(:queen, "queen spotted?") %><br>
-    <%= check_box_tag (:eggs) %>
-    <%= label_tag(:eggs, "eggs?") %><br>
-    <%= check_box_tag (:re_queen) %>
-    <%= label_tag(:re_queen, "re queened?") %>
+
+
+
+    <%= f.select :queen, [["spotted", true], ["not spotted", false]], { label: "queen?" }, { class: "selectpicker" } %>
+    <%= f.select :eggs, [["present", true], ["not present", false]], { label: "eggs?" }, { class: "selectpicker" } %>
+    <%= f.select :queen_cells, [["present", true], ["not present", false]], { label: "queen cells?" }, { class: "selectpicker" } %>
+    <%= f.select :re_queen, [["yes", true], ["no", false]], { label: "re queen?" }, { class: "selectpicker" } %>
+
+
   <h5>food reserves</h5>
     <%= label_tag(:pollen, "pollen stores: low to high") %>
     <%= f.range_field :pollen, in: 0..10 %>
@@ -47,7 +48,7 @@
   <h5>actions</h5>
     <%= f.text_field :syrup, placeholder: "sugar syrup"%>
     <%= f.text_field :pollen_sub, placeholder: "pollen supplement"%>
-    <%= f.text_field :medicine, placeholder: "meds/treatments"%>
+    <%= f.text_field :medicine, placeholder: "meds"%>
     <%= label_tag(:add_super, "add/remove super") %>
     <%= f.number_field :add_super %>
     <%= f.submit "add inspection" %>

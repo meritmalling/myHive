@@ -4,19 +4,55 @@ $ (function(){
       $(this).removeData('bs.modal');
   });
 
-  console.log("gon",gon)
-  console.log("gon.inspections",gon.inspections)
   if(gon && gon.inspections) {
 
-  var temperment =  gon.inspections.map(function(child){
-    return parseInt(child.temperment);
-  });
+var temperment =  gon.inspections.map(function(child){
+return parseInt(child.temperment);
+});
 
-  var inspectionDate =  gon.inspections.map(function(child){
-    return parseInt(child.inspection_date);
-  });
+var layingPattern =  gon.inspections.map(function(child){
+return parseInt(child.laying_pattern);
+});
 
-  console.log('temperment array',temperment)
+var cappedBrood =  gon.inspections.map(function(child){
+return parseInt(child.capped_brood);
+});
+
+var uncappedBrood =  gon.inspections.map(function(child){
+return parseInt(child.uncapped_brood);
+});
+
+var population =  gon.inspections.map(function(child){
+return parseInt(child.population);
+});
+
+var droneCells =  gon.inspections.map(function(child){
+return parseInt(child.drone_cells);
+});
+
+var dronePopulation =  gon.inspections.map(function(child){
+return parseInt(child.drone_population);
+});
+
+var honey =  gon.inspections.map(function(child){
+return parseInt(child.honey);
+});
+
+var nectar =  gon.inspections.map(function(child){
+return parseInt(child.nectar);
+});
+
+var pollen =  gon.inspections.map(function(child){
+return parseInt(child.pollen);
+});
+
+var temp =  gon.inspections.map(function(child){
+return parseInt(child.temp);
+});
+
+var windSpeed =  gon.inspections.map(function(child){
+return parseInt(child.wind_speed);
+});
 
   data = {
     labels : [],
@@ -30,8 +66,154 @@ $ (function(){
       }
     ]
   };
+    data2 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : layingPattern
+      }
+    ]
+  };
+    data3 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : cappedBrood
+      }
+    ]
+  };
+    data4 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : uncappedBrood
+      }
+    ]
+  };
+    data5 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : population
+      }
+    ]
+  };
+    data6 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : droneCells
+      }
+    ]
+  };
+    data7 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : dronePopulation
+      }
+    ]
+  };
+    data8 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : honey
+      }
+    ]
+  };
+    data9 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : nectar
+      }
+    ]
+  };
+    data10 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : pollen
+      }
+    ]
+  };
+    data11 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : temp
+      }
+    ]
+  };
+
+  data12 = {
+    labels : [],
+    datasets : [
+      {
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
+        pointStrokeColor : "#fff",
+        data : windSpeed
+      }
+    ]
+  };
+
+
 
 myNewChart = new Chart($("#canvas").get(0).getContext("2d")).Line(data);
+myNewChart = new Chart($("#canvas2").get(0).getContext("2d")).Line(data2);
+myNewChart = new Chart($("#canvas3").get(0).getContext("2d")).Line(data3);
+myNewChart = new Chart($("#canvas4").get(0).getContext("2d")).Line(data4);
+myNewChart = new Chart($("#canvas5").get(0).getContext("2d")).Line(data5);
+myNewChart = new Chart($("#canvas6").get(0).getContext("2d")).Line(data6);
+myNewChart = new Chart($("#canvas7").get(0).getContext("2d")).Line(data7);
+myNewChart = new Chart($("#canvas8").get(0).getContext("2d")).Line(data8);
+myNewChart = new Chart($("#canvas9").get(0).getContext("2d")).Line(data9);
+myNewChart = new Chart($("#canvas10").get(0).getContext("2d")).Line(data10);
+myNewChart = new Chart($("#canvas11").get(0).getContext("2d")).Line(data11);
+myNewChart = new Chart($("#canvas12").get(0).getContext("2d")).Line(data12);
 
 }
 });

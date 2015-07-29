@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728211007) do
+ActiveRecord::Schema.define(version: 20150729201810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20150728211007) do
     t.string   "pollen_sub"
     t.string   "medicine"
     t.integer  "add_super"
-    t.integer  "remove_super"
     t.boolean  "re_queen"
     t.boolean  "queen"
     t.boolean  "eggs"
@@ -68,11 +67,10 @@ ActiveRecord::Schema.define(version: 20150728211007) do
     t.integer  "hive_id"
     t.date     "inspection_date"
     t.string   "weather_main"
-    t.integer  "weather_temp"
-    t.integer  "weather_wind_speed"
-    t.integer  "weather_wind_direction"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.decimal  "wind_speed"
+    t.decimal  "temp"
   end
 
   add_index "inspections", ["hive_id"], name: "index_inspections_on_hive_id", using: :btree
