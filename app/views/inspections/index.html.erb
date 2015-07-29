@@ -1,10 +1,12 @@
 <div class='row'>
-<h2><%= hive = Hive.find(params[:hive_id]).nickname %></h2>
+<h2><%= @hive.nickname %> inspections</h2>
 </div>
 <table>
-    <% Hive.find(params[:hive_id]).inspections.each do |i| %>
+    <%= @hive.inspections.inspect %>
+    <% @hive.inspections.each do |i| %>
+
     <td>
-      <tr><%= i.inspection_date %></tr>
+    <tr><%= link_to "#{i.inspection_date}", [@hive, i] %></tr>
     </td>
 </table>
 <% end %>

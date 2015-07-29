@@ -10,7 +10,7 @@
   <%= f.date_select :creation_date, label: 'hive name'  %>
   <%= f.select :creation_method, [["package", "package"], ["split", "split"], ["swarm", "swarm"]], label: 'creation method' %>
   <%= f.text_field :breed  %>
-  <%= f.select :type, [["langstroth", "langstroth"], ["top-bar", "top-bar"], ["warre", "warre"]], label: 'type' %>
+  <%= f.select :hive_type, [["langstroth", "langstroth"], ["top-bar", "top-bar"], ["warre", "warre"]], label: 'type' %>
   <%= f.number_field :supers %>
   <%= f.text_field :notes%>
   <%= f.primary "add hive" %>

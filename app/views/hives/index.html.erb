@@ -1,16 +1,17 @@
-<div class='row'>
 <h2>myApiary</h2>
-  <%= link_to 'add a hive', new_hive_path %>
-</div>
+ <canvas id="canvas" width="300" height="200"></canvas>
 
-    <% @hives.each do |h| %>
+  <% @hives.each do |h| %>
     <table>
       <% if h.hive_owner @current_user %>
         <td>
-          <tr><%= link_to "#{h.nickname} info", h %></tr>
-          <tr><%= link_to "#{h.nickname} inspections", h %></tr>
+          <tr><%= h.nickname %> </tr>
+        </td>
+        <td>
+          <tr><%= link_to "info", h %></tr> |
+          <tr><%= link_to "inspections", hive_inspections_path(h) %></tr>
         </td>
       <% end %>
-</table>
-<% end %>
-
+    </table>
+  <% end %>
+  <%= link_to 'add a hive', new_hive_path %>

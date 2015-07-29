@@ -4,9 +4,11 @@ before_action :is_authenticated
 
    def index
     @inspections = Inspection.all
+    @hive = Hive.find(params[:hive_id])
    end
 
    def new
+    @hive = Hive.find params[:hive_id]
     @inspection = Inspection.new
     @data = hive_weather
    end
@@ -47,7 +49,7 @@ before_action :is_authenticated
   private
 
   def inspection_params
-    params.require(:inspection).permit(:temperment, :laying_pattern, :uncapped_brood, :capped_brood, :population, :drone_population, :drone_cells, :honey, :nectar, :pollen, :syrup, :pollen_sub, :medicine, :add_super, :remove_super, :re_queen, :queen, :eggs, :queen_cells, :notes)
+    params.require(:inspection).permit(:temperment, :laying_pattern, :uncapped_brood, :capped_brood, :population, :drone_population, :drone_cells, :honey, :nectar, :pollen, :syrup, :pollen_sub, :medicine, :add_super, :remove_super, :re_queen, :queen, :eggs, :queen_cells, :notes, :inspection_date)
   end
 
   def hive_weather
