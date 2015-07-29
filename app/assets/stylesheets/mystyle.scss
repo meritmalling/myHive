@@ -8,3 +8,9 @@ img {
 #inspection-graphs span{
   display: inline-block;
 }
+input[type=range]+.thumb .value {
+  color: red;
+}
+.input-field label{
+  color: red;
+}

@@ -23,14 +23,18 @@
     <%= label_tag(:queen_cells, "number of queen cells") %>
     <%= f.range_field :queen_cells, in: 0..10 %>
   <h5>queen & laying</h5>
+    <%= label_tag(:population, "population: low to high") %>
+    <%= f.range_field :population, in: 0..10 %>
     <%= label_tag(:laying_pattern, "laying pattern: poor to beautiful") %>
     <%= f.range_field :laying_pattern, in: 0..10 %>
     <%= label_tag(:uncapped_brood, "uncapped brood") %>
     <%= f.range_field :uncapped_brood, in: 0..10 %>
     <%= label_tag(:capped_brood, "capped brood") %>
     <%= f.range_field :capped_brood, in: 0..10 %>
-    <%= label_tag(:population, "population: low to high") %>
-    <%= f.range_field :population, in: 0..10 %>
+    <%= check_box_tag (:queen) %>
+    <%= label_tag(:queen, "queen spotted?") %><br>
+    <%= check_box_tag (:eggs) %>
+    <%= label_tag(:eggs, "eggs?") %><br>
     <%= check_box_tag (:re_queen) %>
     <%= label_tag(:re_queen, "re queened?") %>
   <h5>food reserves</h5>
@@ -41,9 +45,9 @@
     <%= label_tag(:honey, "honey stores: low to high") %>
     <%= f.range_field :honey, in: 0..10 %>
   <h5>actions</h5>
-    <%= f.text_field :syrup, placeholder: "feed sugar syrup"%>
-    <%= f.text_field :pollen_sub, placeholder: "feed pollen supplement"%>
-    <%= f.text_field :medicine, placeholder: "medicated"%>
+    <%= f.text_field :syrup, placeholder: "sugar syrup"%>
+    <%= f.text_field :pollen_sub, placeholder: "pollen supplement"%>
+    <%= f.text_field :medicine, placeholder: "meds/treatments"%>
     <%= label_tag(:add_super, "add/remove super") %>
     <%= f.number_field :add_super %>
     <%= f.submit "add inspection" %>
