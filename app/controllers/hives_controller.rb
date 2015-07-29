@@ -40,6 +40,7 @@ class HivesController < ApplicationController
 
   def show
     @hive = Hive.find(params[:id])
+    gon.inspections = @hive.inspections
   end
 
   private

@@ -1,91 +1,51 @@
-<div class='row'>
-  <h2>inspection log</h2>
-  <h4>add your observations below</h4>
+<div style='text-align: center' class='row'>
+  <h4>inspection log</h4>
+  <h5>add your observations below</h5>
 </div>
 
-<%= bootstrap_form_for [@hive, @inspection] do |f| %>
-  <h4>weather</h4>
-  <%= f.text_field :weather_main, label: "description", value: "#{@data['weather'][0]['description']}"%>
-  <%= f.number_field :weather_temp, label: "temp", value: @data["main"]["temp"]%>
-  <%= f.number_field :weather_wind_speed, label: "wind speed", value: @data["wind"]["speed"]%>
-  <h4>population </h4>
-  <%= f.form_group :temperment, label: { text: "temperment" } do %>
-    <%= f.radio_button :temperment, 0, label: "calm", inline: true %>
-    <%= f.radio_button :temperment, 1, label: "agitated", inline: true %>
-    <%= f.radio_button :temperment, 2, label: "aggressive", inline: true %>
-  <% end %>
-  <%= f.form_group :drone_population, label: { text: "drone population" } do %>
-    <%= f.radio_button :drone_population, 0, label: "low", inline: true %>
-    <%= f.radio_button :drone_population, 1, label: "medium", inline: true %>
-    <%= f.radio_button :drone_population, 2, label: "high", inline: true %>
-  <% end %>
-  <%= f.form_group :drone_cells, label: { text: "drone cells" } do %>
-    <%= f.radio_button :drone_cells, 0, label: "low", inline: true %>
-    <%= f.radio_button :drone_cells, 1, label: "medium", inline: true %>
-    <%= f.radio_button :drone_cells, 2, label: "high", inline: true %>
-  <% end %>
-   <%= f.form_group :queen_cells, label: { text: "queen cells" } do %>
-    <%= f.radio_button :queen_cells, true, label: "yes", inline: true %>
-    <%= f.radio_button :queen_cells, false, label: "no", inline: true %>
-  <% end %>
-  <h4>queen & laying</h4>
-  <%= f.form_group :queen, label: { text: "saw queen" } do %>
-    <%= f.radio_button :queen, true, label: "yes", inline: true %>
-    <%= f.radio_button :queen, false, label: "no", inline: true %>
-  <% end %>
-  <%= f.form_group :eggs, label: { text: "saw eggs" } do %>
-    <%= f.radio_button :eggs, true, label: "yes", inline: true %>
-    <%= f.radio_button :eggs, false, label: "no", inline: true %>
-  <% end %>
-  <%= f.form_group :laying_pattern, label: { text: "laying pattern" } do %>
-    <%= f.radio_button :laying_pattern, 0, label: "poor", inline: true %>
-    <%= f.radio_button :laying_pattern, 1, label: "medicore", inline: true %>
-    <%= f.radio_button :laying_pattern, 2, label: "great", inline: true %>
-  <% end %>
-  <%= f.form_group :uncapped_brood, label: { text: "uncapped brood" } do %>
-    <%= f.radio_button :uncapped_brood, 0, label: "low", inline: true %>
-    <%= f.radio_button :uncapped_brood, 1, label: "medium", inline: true %>
-    <%= f.radio_button :uncapped_brood, 2, label: "high", inline: true %>
-  <% end %>
-  <%= f.form_group :capped_brood, label: { text: "capped brood" } do %>
-    <%= f.radio_button :capped_brood, 0, label: "low", inline: true %>
-    <%= f.radio_button :capped_brood, 1, label: "medium", inline: true %>
-    <%= f.radio_button :capped_brood, 2, label: "high", inline: true %>
-  <% end %>
-  <%= f.form_group :population, label: { text: "population" } do %>
-    <%= f.radio_button :population, 0, label: "low", inline: true %>
-    <%= f.radio_button :population, 1, label: "medium", inline: true %>
-    <%= f.radio_button :population, 2, label: "high", inline: true %>
-  <% end %>
-
-  <h4>food reserves</h4>
-  <%= f.form_group :honey, label: { text: "honey" } do %>
-    <%= f.radio_button :honey, 0, label: "low", inline: true %>
-    <%= f.radio_button :honey, 1, label: "medium", inline: true %>
-    <%= f.radio_button :honey, 2, label: "high", inline: true %>
-  <% end %>
-  <%= f.form_group :nectar, label: { text: "nectar" } do %>
-    <%= f.radio_button :nectar, 0, label: "low", inline: true %>
-    <%= f.radio_button :nectar, 1, label: "medium", inline: true %>
-    <%= f.radio_button :nectar, 2, label: "high", inline: true %>
-  <% end %>
-  <%= f.form_group :pollen, label: { text: "pollen" } do %>
-    <%= f.radio_button :pollen, 0, label: "low", inline: true %>
-    <%= f.radio_button :pollen, 1, label: "medium", inline: true %>
-    <%= f.radio_button :pollen, 2, label: "high", inline: true %>
-  <% end %>
-  <h4>actions</h4>
-    <%= f.text_field :syrup, label: "feed sugar syrup"%>
-    <%= f.text_field :pollen_sub, label: "feed pollen supplement"%>
-    <%= f.text_field :medicine, label: "medicated"%>
-    <%= f.number_field :add_super %>
-    <%= f.number_field :remove_super %>
-    <%= f.form_group :re_queen, label: { text: "requeened?" } do %>
-      <%= f.radio_button :re_queen, true, label: "yes", inline: true %>
-    <% end %>
-  <h4>notes</h4>
+<%= form_for [@hive, @inspection] do |f| %>
     <%= f.date_field :inspection_date%>
-    <%= f.text_field :notes%>
-  <%= f.primary "add inspection" %>
+    <%= f.text_field :notes, placeholder: 'notes'%>
+  <h5>weather</h5>
+    <%= label_tag(:weather_main, "description") %>
+    <%= f.text_field :weather_main, value: "#{@data['weather'][0]['description']}"%>
+    <%= label_tag(:weather_temp, "temp") %>
+    <%= f.number_field :weather_temp, value: @data["main"]["temp"]%>
+    <%= label_tag(:weather_wind_speed, "wind speed") %>
+    <%= f.number_field :weather_wind_speed, value: @data["wind"]["speed"]%>
+  <h5>population </h5>
+    <%= label_tag(:temperment, "temperment: calm to agressive") %>
+    <%= f.range_field :temperment,in: 0..10 %>
+    <%= label_tag(:drone_population, "drone population") %>
+    <%= f.range_field :drone_population, in: 0..10 %>
+    <%= label_tag(:drone_cells, "number of drone cells") %>
+    <%= f.range_field :drone_cells, in: 0..10 %>
+    <%= label_tag(:queen_cells, "number of queen cells") %>
+    <%= f.range_field :queen_cells, in: 0..10 %>
+  <h5>queen & laying</h5>
+    <%= label_tag(:laying_pattern, "laying pattern: poor to beautiful") %>
+    <%= f.range_field :laying_pattern, in: 0..10 %>
+    <%= label_tag(:uncapped_brood, "uncapped brood") %>
+    <%= f.range_field :uncapped_brood, in: 0..10 %>
+    <%= label_tag(:capped_brood, "capped brood") %>
+    <%= f.range_field :capped_brood, in: 0..10 %>
+    <%= label_tag(:population, "population: low to high") %>
+    <%= f.range_field :population, in: 0..10 %>
+    <%= check_box_tag (:re_queen) %>
+    <%= label_tag(:re_queen, "re queened?") %>
+  <h5>food reserves</h5>
+    <%= label_tag(:pollen, "pollen stores: low to high") %>
+    <%= f.range_field :pollen, in: 0..10 %>
+    <%= label_tag(:nectar, "nectar stores: low to high") %>
+    <%= f.range_field :nectar, in: 0..10 %>
+    <%= label_tag(:honey, "honey stores: low to high") %>
+    <%= f.range_field :honey, in: 0..10 %>
+  <h5>actions</h5>
+    <%= f.text_field :syrup, placeholder: "feed sugar syrup"%>
+    <%= f.text_field :pollen_sub, placeholder: "feed pollen supplement"%>
+    <%= f.text_field :medicine, placeholder: "medicated"%>
+    <%= label_tag(:add_super, "add/remove super") %>
+    <%= f.number_field :add_super %>
+    <%= f.submit "add inspection" %>
 <% end %>
 

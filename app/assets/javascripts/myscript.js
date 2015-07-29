@@ -12,15 +12,19 @@ $ (function(){
     return parseInt(child.temperment);
   });
 
+  var inspectionDate =  gon.inspections.map(function(child){
+    return parseInt(child.inspection_date);
+  });
+
   console.log('temperment array',temperment)
 
   data = {
-    labels : ["January","February","March","April","May","June","July"],
+    labels : [],
     datasets : [
       {
-        fillColor : "rgba(220,220,220,0.5)",
-        strokeColor : "rgba(220,220,220,1)",
-        pointColor : "rgba(220,220,220,1)",
+        fillColor : "rgb(255, 226, 112)",
+        strokeColor : "rgb(255, 222, 89)",
+        pointColor : "rgb(255, 222, 89)",
         pointStrokeColor : "#fff",
         data : temperment
       }

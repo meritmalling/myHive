@@ -1,12 +1,13 @@
 <div class='row'>
-  <h2>congratulations, you have new bees!</h2>
-  <h4>add your hive to your myHive apiary below</h4>
+  <h4>congratulations, you have new bees!</h4>
+  <h5>add your hive to your myHive apiary below</h5>
 </div>
 
 <%= bootstrap_form_for @hive do |f| %>
   <%= f.text_field :nickname, label: 'hive name' %>
   <%= f.number_field :location%>
-  <p>please give myHive a valid US zip code so that we can store weather data for you in your inspections!</p>
+  <p>please give myHive a valid US zip code<p>
+  <p>doing so will allow us to provide you with weather data for your inspections!</p>
   <%= f.date_select :creation_date, label: 'hive name'  %>
   <%= f.select :creation_method, [["package", "package"], ["split", "split"], ["swarm", "swarm"]], label: 'creation method' %>
   <%= f.text_field :breed  %>
