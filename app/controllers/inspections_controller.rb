@@ -3,8 +3,9 @@ class InspectionsController < ApplicationController
 before_action :is_authenticated
 
    def index
-    @inspections = Inspection.all
     @hive = Hive.find(params[:hive_id])
+    @inspections = @hive.inspections
+    gon.inspections = @inspections
    end
 
    def new

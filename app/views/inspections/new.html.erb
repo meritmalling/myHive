@@ -10,19 +10,19 @@
   <%= f.number_field :weather_wind_speed, label: "wind speed", value: @data["wind"]["speed"]%>
   <h4>population </h4>
   <%= f.form_group :temperment, label: { text: "temperment" } do %>
-    <%= f.radio_button :temperment, "calm", label: "calm", inline: true %>
-    <%= f.radio_button :temperment, "agitated", label: "agitated", inline: true %>
-    <%= f.radio_button :temperment, "aggressive", label: "aggressive", inline: true %>
+    <%= f.radio_button :temperment, 0, label: "calm", inline: true %>
+    <%= f.radio_button :temperment, 1, label: "agitated", inline: true %>
+    <%= f.radio_button :temperment, 2, label: "aggressive", inline: true %>
   <% end %>
   <%= f.form_group :drone_population, label: { text: "drone population" } do %>
-    <%= f.radio_button :drone_population, "low", label: "low", inline: true %>
-    <%= f.radio_button :drone_population, "medium", label: "medium", inline: true %>
-    <%= f.radio_button :drone_population, "high", label: "high", inline: true %>
+    <%= f.radio_button :drone_population, 0, label: "low", inline: true %>
+    <%= f.radio_button :drone_population, 1, label: "medium", inline: true %>
+    <%= f.radio_button :drone_population, 2, label: "high", inline: true %>
   <% end %>
   <%= f.form_group :drone_cells, label: { text: "drone cells" } do %>
-    <%= f.radio_button :drone_cells, "low", label: "low", inline: true %>
-    <%= f.radio_button :drone_cells, "medium", label: "medium", inline: true %>
-    <%= f.radio_button :drone_cells, "high", label: "high", inline: true %>
+    <%= f.radio_button :drone_cells, 0, label: "low", inline: true %>
+    <%= f.radio_button :drone_cells, 1, label: "medium", inline: true %>
+    <%= f.radio_button :drone_cells, 2, label: "high", inline: true %>
   <% end %>
    <%= f.form_group :queen_cells, label: { text: "queen cells" } do %>
     <%= f.radio_button :queen_cells, true, label: "yes", inline: true %>
@@ -38,41 +38,41 @@
     <%= f.radio_button :eggs, false, label: "no", inline: true %>
   <% end %>
   <%= f.form_group :laying_pattern, label: { text: "laying pattern" } do %>
-    <%= f.radio_button :laying_pattern, "poor", label: "poor", inline: true %>
-    <%= f.radio_button :laying_pattern, "medicore", label: "medicore", inline: true %>
-    <%= f.radio_button :laying_pattern, "great", label: "great", inline: true %>
+    <%= f.radio_button :laying_pattern, 0, label: "poor", inline: true %>
+    <%= f.radio_button :laying_pattern, 1, label: "medicore", inline: true %>
+    <%= f.radio_button :laying_pattern, 2, label: "great", inline: true %>
   <% end %>
   <%= f.form_group :uncapped_brood, label: { text: "uncapped brood" } do %>
-    <%= f.radio_button :uncapped_brood, "low", label: "low", inline: true %>
-    <%= f.radio_button :uncapped_brood, "medium", label: "medium", inline: true %>
-    <%= f.radio_button :uncapped_brood, "high", label: "high", inline: true %>
+    <%= f.radio_button :uncapped_brood, 0, label: "low", inline: true %>
+    <%= f.radio_button :uncapped_brood, 1, label: "medium", inline: true %>
+    <%= f.radio_button :uncapped_brood, 2, label: "high", inline: true %>
   <% end %>
   <%= f.form_group :capped_brood, label: { text: "capped brood" } do %>
-    <%= f.radio_button :capped_brood, "low", label: "low", inline: true %>
-    <%= f.radio_button :capped_brood, "medium", label: "medium", inline: true %>
-    <%= f.radio_button :capped_brood, "high", label: "high", inline: true %>
+    <%= f.radio_button :capped_brood, 0, label: "low", inline: true %>
+    <%= f.radio_button :capped_brood, 1, label: "medium", inline: true %>
+    <%= f.radio_button :capped_brood, 2, label: "high", inline: true %>
   <% end %>
   <%= f.form_group :population, label: { text: "population" } do %>
-    <%= f.radio_button :population, "low", label: "low", inline: true %>
-    <%= f.radio_button :population, "medium", label: "medium", inline: true %>
-    <%= f.radio_button :population, "high", label: "high", inline: true %>
+    <%= f.radio_button :population, 0, label: "low", inline: true %>
+    <%= f.radio_button :population, 1, label: "medium", inline: true %>
+    <%= f.radio_button :population, 2, label: "high", inline: true %>
   <% end %>
 
   <h4>food reserves</h4>
   <%= f.form_group :honey, label: { text: "honey" } do %>
-    <%= f.radio_button :honey, "low", label: "low", inline: true %>
-    <%= f.radio_button :honey, "medium", label: "medium", inline: true %>
-    <%= f.radio_button :honey, "high", label: "high", inline: true %>
+    <%= f.radio_button :honey, 0, label: "low", inline: true %>
+    <%= f.radio_button :honey, 1, label: "medium", inline: true %>
+    <%= f.radio_button :honey, 2, label: "high", inline: true %>
   <% end %>
   <%= f.form_group :nectar, label: { text: "nectar" } do %>
-    <%= f.radio_button :nectar, "low", label: "low", inline: true %>
-    <%= f.radio_button :nectar, "medium", label: "medium", inline: true %>
-    <%= f.radio_button :nectar, "high", label: "high", inline: true %>
+    <%= f.radio_button :nectar, 0, label: "low", inline: true %>
+    <%= f.radio_button :nectar, 1, label: "medium", inline: true %>
+    <%= f.radio_button :nectar, 2, label: "high", inline: true %>
   <% end %>
   <%= f.form_group :pollen, label: { text: "pollen" } do %>
-    <%= f.radio_button :pollen, "low", label: "low", inline: true %>
-    <%= f.radio_button :pollen, "medium", label: "medium", inline: true %>
-    <%= f.radio_button :pollen, "high", label: "high", inline: true %>
+    <%= f.radio_button :pollen, 0, label: "low", inline: true %>
+    <%= f.radio_button :pollen, 1, label: "medium", inline: true %>
+    <%= f.radio_button :pollen, 2, label: "high", inline: true %>
   <% end %>
   <h4>actions</h4>
     <%= f.text_field :syrup, label: "feed sugar syrup"%>
