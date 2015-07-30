@@ -60,7 +60,7 @@ class InspectionsController < ApplicationController
   def hive_weather
     zipcode = Hive.find(params[:hive_id]).location
     response = RestClient.get(
-      "api.openweathermap.org/data/2.5/weather?zip=98117,us")
+      "api.openweathermap.org/data/2.5/weather?zip=" + zipcode.to_s + ",us")
     data = JSON.parse(response.body)
   end
 
