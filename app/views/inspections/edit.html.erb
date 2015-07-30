@@ -6,11 +6,8 @@
     <%= f.date_field :inspection_date, :class => 'datepicker', placeholder: 'date of inspection' %>
     <%= f.text_field :notes, placeholder: 'notes'%>
   <h5>weather</h5>
-    <%= label_tag(:weather_main, "description") %>
     <%= f.text_field :weather_main%>
-    <%= label_tag(:temp, "temp") %>
     <%= f.number_field :temp, :class => 'text_field', :step => 'any'%>
-    <%= label_tag(:wind_speed, "wind speed") %>
     <%= f.number_field :wind_speed, :class => 'text_field', :step => 'any'%>
   <h5>population </h5>
     <%= label_tag(:temperment, "temperment: calm to agressive") %>

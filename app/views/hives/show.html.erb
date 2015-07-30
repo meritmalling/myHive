@@ -64,6 +64,7 @@
     <li>
       <%= link_to "#{i.inspection_date}", [@hive, i] %> |
       <%= link_to "edit", edit_hive_inspection_path(@hive, i) %> |
+      <%= link_to "delete ", [@hive, i], method:'delete' %> |
       <%= link_to "remove", edit_hive_inspection_path(@hive, i) %> |
       <%= "#{i.notes}" %>
     </li>

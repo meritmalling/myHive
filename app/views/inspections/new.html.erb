@@ -8,7 +8,7 @@
     <%= label_tag(:weather_main, "description") %>
     <%= f.text_field :weather_main, value: "#{@data['weather'][0]['description']}"%>
     <%= label_tag(:temp, "temp") %>
-    <%= f.number_field :temp, :class => 'text_field', :step => 'any', value: @data["main"]["temp"]%>
+    <%= f.number_field :temp, :class => 'text_field', :step => 'any', value: @temp%>
     <%= label_tag(:wind_speed, "wind speed") %>
     <%= f.number_field :wind_speed, :class => 'text_field', :step => 'any', value: @data["wind"]["speed"]%>
   <h5>population </h5>

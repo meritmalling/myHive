@@ -14,6 +14,7 @@ class InspectionsController < ApplicationController
     @hive = Hive.find params[:hive_id]
     @inspection = Inspection.new
     @data = hive_weather
+    @temp = temp_imperial(@data["main"]["temp"])
    end
 
    def create
@@ -23,7 +24,8 @@ class InspectionsController < ApplicationController
    end
 
    def destroy
-    @inpection = Inspection.find(params[:id])
+
+    @inspection = Inspection.find(params[:id])
     @inspection.destroy
     redirect_to hives_path
    end
@@ -62,6 +64,11 @@ class InspectionsController < ApplicationController
     response = RestClient.get(
       "api.openweathermap.org/data/2.5/weather?zip=" + zipcode.to_s + ",us")
     data = JSON.parse(response.body)
+  end
+
+  def temp_imperial kelvin
+    number = (kelvin - 273.15)* 1.8000 + 32.00
+    return number.round(2)
   end
 
 end
