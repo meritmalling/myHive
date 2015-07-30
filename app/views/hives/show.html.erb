@@ -4,7 +4,7 @@
   <b>from:</b> <%= @hive.creation_method %>
   <b>breed:</b> <%= @hive.breed %>
   <b>hive type:</b> <%= @hive.hive_type %><br>
-  <b>notes:</b> <%= @hive.notes %>
+  <%= @hive.notes %>
 </div>
 <div style='text-align: center' id='inspection-graphs'>
   <span>
@@ -57,13 +57,15 @@
     </span>
 </div>
 <ul>
-  <h4>inspections</h4>
+  <h4 style='display: inline'>inspections</h4>
+  <p style='display: inline'><%= link_to "add inspection", new_hive_inspection_path(@hive) %></p>
+  <p></p>
   <% @hive.inspections.each do |i| %>
     <li>
       <%= link_to "#{i.inspection_date}", [@hive, i] %> |
       <%= link_to "edit", edit_hive_inspection_path(@hive, i) %> |
       <%= link_to "remove", edit_hive_inspection_path(@hive, i) %> |
-      <%= "notes: #{i.notes}" %>
+      <%= "#{i.notes}" %>
     </li>
   <% end %>
  </ul>
