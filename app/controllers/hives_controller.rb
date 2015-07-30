@@ -47,7 +47,7 @@ class HivesController < ApplicationController
   private
 
   def hive_params
-    params.require(:hive).permit(:nickname, :creation_date, :creation_method, :breed, :hivetype, :supers, :notes)
+    params.require(:hive).permit(:nickname, :creation_date, :creation_method, :breed, :hive_type, :supers, :notes, :location)
   end
 
 end

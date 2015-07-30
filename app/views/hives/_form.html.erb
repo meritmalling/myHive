@@ -1,12 +1,12 @@
 <%= form_for @hive do |f| %>
-  <%= f.text_field :nickname, label: 'hive name' %>
-  <%= f.number_field :location, label: 'location by five-digit-zip'%>
+  <%= f.text_field :nickname, placeholder: 'hive name' %>
+  <%= f.text_field :location, placeholder: 'location by five-digit-zip'%>
   <p style='text-align: center'>please give myHive a valid US zip code so that we may provide local weather for your inspections!<p>
-  <%= f.date_select :creation_date, label: 'date of creation'  %>
-  <%= f.select :creation_method, [["package", "package"], ["split", "split"], ["swarm", "swarm"]], label: 'creation method' %>
-  <%= f.text_field :breed,label: 'breed' %>
-  <%= f.select :hive_type, [["langstroth", "langstroth"], ["top-bar", "top-bar"], ["warre", "warre"]], label: 'type' %>
-  <%= f.number_field :supers, label: 'number of supers' %>
-  <%= f.text_field :notes, label: 'notes' %>
+  <%= f.date_select :creation_date, placeholder: 'date of creation'  %>
+  <%= f.select :creation_method, [["package", "package"], ["split", "split"], ["swarm", "swarm"]], placeholder: 'creation method' %>
+  <%= f.text_field :breed,placeholder: 'breed' %>
+  <%= f.select :hive_type, [["langstroth", "langstroth"], ["top-bar", "top-bar"], ["warre", "warre"]], placeholder: 'type' %>
+  <%= f.number_field :supers, placeholder: 'number of supers' %>
+  <%= f.text_field :notes, placeholder: 'notes' %>
   <%= f.submit %>
 <% end %>
