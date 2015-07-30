@@ -1,4 +1,4 @@
-<%= bootstrap_form_for @hive do |f| %>
+<%= form_for @hive do |f| %>
   <%= f.text_field :nickname, label: 'hive name' %>
   <%= f.number_field :location, label: 'location by five-digit-zip'%>
   <p style='text-align: center'>please give myHive a valid US zip code so that we may provide local weather for your inspections!<p>
