@@ -1,6 +1,8 @@
 class InspectionsController < ApplicationController
 
-before_action :is_authenticated
+  before_action :is_authenticated
+
+  require 'rest-client'
 
    def index
     @hive = Hive.find(params[:hive_id])
@@ -56,14 +58,10 @@ before_action :is_authenticated
   end
 
   def hive_weather
-    require 'rest-client'
-    require 'awesome_print'
     zipcode = Hive.find(params[:hive_id]).location
     response = RestClient.get(
       "api.openweathermap.org/data/2.5/weather?zip=" + zipcode.to_s + ",us")
-
     data = JSON.parse(response.body)
-
   end
 
 end
