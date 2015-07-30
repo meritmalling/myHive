@@ -3,9 +3,10 @@
   <b>started:</b> <%= @hive.creation_date %>
   <b>from:</b> <%= @hive.creation_method %>
   <b>breed:</b> <%= @hive.breed %>
-  <b>hive type:</b> <%= @hive.hive_type %>
+  <b>hive type:</b> <%= @hive.hive_type %><br>
+  <b>notes:</b> <%= @hive.notes %>
 </div>
-<div id='inspection-graphs'>
+<div style='text-align: center' id='inspection-graphs'>
   <span>
     <p>temperment</p>
     <canvas id="canvas" width="150" height="100"></canvas>
@@ -59,34 +60,10 @@
   <h4>inspections</h4>
   <% @hive.inspections.each do |i| %>
     <li>
-      <%= link_to "#{i.inspection_date}", [@hive, i] %>
+      <%= link_to "#{i.inspection_date}", [@hive, i] %> |
+      <%= link_to "edit", edit_hive_inspection_path(@hive, i) %> |
+      <%= link_to "remove", edit_hive_inspection_path(@hive, i) %> |
       <%= "notes: #{i.notes}" %>
     </li>
   <% end %>
  </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class='row'>
-    <h4><%= @hive.nickname %></h4>
-    <p><strong>started:</strong> <%= @hive.creation_date %></p>
-    <p><strong>from:</strong> <%= @hive.creation_method %></p>
-    <p><strong>breed:</strong> <%= @hive.breed %></p>
-    <p><strong>hive type:</strong> <%= @hive.hive_type %></p>
-    <p><strong>supers:</strong> <%= @hive.supers%></p>
-    <p><strong>location:</strong> <%= @hive.location %></p>
-    <p><strong>notes:</strong> <%= @hive.notes %></p>
-</div>
-
-

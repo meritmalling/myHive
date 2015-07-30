@@ -12,7 +12,7 @@ def create
     redirect_to root_path
   else
     flash[:danger] = @user.errors.full_messages.uniq.to_sentence
-    render :new
+     redirect_to root_path
   end
 end
 

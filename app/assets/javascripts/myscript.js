@@ -4,6 +4,19 @@ $ (function(){
       $(this).removeData('bs.modal');
   });
 
+  $(document).ready(function() {
+   $('select').material_select();
+});
+
+   $(document).ready(function(){
+    $('.modal-trigger').leanModal();
+  });
+
+   $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+
   if(gon && gon.inspections) {
 
 var temperment =  gon.inspections.map(function(child){

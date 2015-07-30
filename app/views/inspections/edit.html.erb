@@ -1,0 +1,54 @@
+<div style='text-align: center' class='row'>
+  <h4>inspection log</h4>
+  <h5>edit your observations below</h5>
+</div>
+<%= form_for [@hive, @inspection] do |f| %>
+    <%= f.date_field :inspection_date, :class => 'datepicker', placeholder: 'date of inspection' %>
+    <%= f.text_field :notes, placeholder: 'notes'%>
+  <h5>weather</h5>
+    <%= label_tag(:weather_main, "description") %>
+    <%= f.text_field :weather_main%>
+    <%= label_tag(:temp, "temp") %>
+    <%= f.number_field :temp, :class => 'text_field', :step => 'any'%>
+    <%= label_tag(:wind_speed, "wind speed") %>
+    <%= f.number_field :wind_speed, :class => 'text_field', :step => 'any'%>
+  <h5>population </h5>
+    <%= label_tag(:temperment, "temperment: calm to agressive") %>
+    <%= f.range_field :temperment,in: 0..10 %>
+    <%= label_tag(:drone_population, "drone population") %>
+    <%= f.range_field :drone_population, in: 0..10 %>
+    <%= label_tag(:drone_cells, "number of drone cells") %>
+    <%= f.range_field :drone_cells, in: 0..10 %>
+  <h5>queen & laying</h5>
+    <%= label_tag(:population, "population: low to high") %>
+    <%= f.range_field :population, in: 0..10 %>
+    <%= label_tag(:laying_pattern, "laying pattern: poor to beautiful") %>
+    <%= f.range_field :laying_pattern, in: 0..10 %>
+    <%= label_tag(:uncapped_brood, "uncapped brood") %>
+    <%= f.range_field :uncapped_brood, in: 0..10 %>
+    <%= label_tag(:capped_brood, "capped brood") %>
+    <%= f.range_field :capped_brood, in: 0..10, :class => "range-field" %>
+    <p>queen?</p>
+    <%= f.select :queen, [["not spotted", false], ["spotted", true]], { label: "queen?" }, { class: "selectpicker" } %>
+    <p>eggs?</p>
+    <%= f.select :eggs, [["present", true], ["not present", false]], { label: "eggs?" }, { class: "selectpicker" } %>
+    <p>queen cells?</p>
+    <%= f.select :queen_cells, [["not present", false], ["present", true]], { label: "queen cells?" }, { class: "selectpicker" } %>
+    <p>re queened?</p>
+    <%= f.select :re_queen, [["no", false], ["yes", true]], { label: "re queen?" }, { class: "selectpicker" } %>
+  <h5>food reserves</h5>
+    <%= label_tag(:pollen, "pollen stores: low to high") %>
+    <%= f.range_field :pollen, in: 0..10 %>
+    <%= label_tag(:nectar, "nectar stores: low to high") %>
+    <%= f.range_field :nectar, in: 0..10 %>
+    <%= label_tag(:honey, "honey stores: low to high") %>
+    <%= f.range_field :honey, in: 0..10 %>
+  <h5>actions</h5>
+    <%= f.text_field :syrup, placeholder: "sugar syrup"%>
+    <%= f.text_field :pollen_sub, placeholder: "pollen supplement"%>
+    <%= f.text_field :medicine, placeholder: "meds"%>
+    <%= label_tag(:add_super, "add/remove super") %>
+    <%= f.number_field :add_super %>
+    <%= f.submit "save updated inspection" %>
+<% end %>
+

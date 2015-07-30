@@ -1,0 +1,7 @@
+<div class="modal-content">
+<%= form_for :user, url: signup_path do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.submit "singup to my hive" %>
+<% end %>
+</div>

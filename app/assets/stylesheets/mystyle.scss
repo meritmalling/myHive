@@ -1,13 +1,16 @@
 body {
   font-family: 'Quicksand', sans-serif;
 }
-img {
+#hiveicon {
+  margin-top: 30px;
   height: 250px;
   width: 250px;
+  text-align: center;
 }
 #inspection-graphs span{
   display: inline-block;
 }
-input[type=range]+.thumb .value {
+.thumb-active{
+  background-color: red;
   color: red;
 }

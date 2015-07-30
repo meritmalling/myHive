@@ -27,10 +27,12 @@ before_action :is_authenticated
    end
 
   def edit
+    @hive = Hive.find(params[:hive_id])
     @inspection = Inspection.find(params[:id])
   end
 
   def update
+    @hive = Hive.find(params[:hive_id])
     @inspection = Inspection.find(params[:id])
     @inspection.update inspection_params
     if @inspection

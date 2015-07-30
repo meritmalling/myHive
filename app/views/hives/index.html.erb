@@ -1,16 +1,19 @@
-<h2>myApiary</h2> <%= link_to 'add a hive', new_hive_path%>
+<div style='text-align: center' class='row'>
+  <h2>myHives</h2>
+  <%= link_to 'add new hive', new_hive_path%>
+</div>
   <% @hives.each do |h| %>
     <% if h.hive_owner @current_user %>
       <ul>
         <li>
-          <h5>
-            <b><%=link_to "#{h.nickname}", hive_inspections_path(h) %></b>
-            <%= h.notes%>
-          </h5>
-          <%= link_to "info", h %> |
+          <h5><b><%= "#{h.nickname}" %></b></h5>
+           <%= link_to "view ", hive_path(h) %> |
+          <%= link_to "edit ", edit_hive_path(h) %> |
+          <%= link_to "delete ", edit_hive_path(h) %> |
           <%= link_to "add inspection", new_hive_inspection_path(h) %>
         </li>
       </ul>
     <% end %>
 <% end %>
 
+</div>

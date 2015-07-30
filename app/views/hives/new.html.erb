@@ -1,18 +1,5 @@
-<div class='row'>
+<div style='text-align: center'>
   <h4>congratulations, you have new bees!</h4>
   <h5>add your hive to your myHive apiary below</h5>
 </div>
-
-<%= bootstrap_form_for @hive do |f| %>
-  <%= f.text_field :nickname, label: 'hive name' %>
-  <%= f.number_field :location%>
-  <p>please give myHive a valid US zip code<p>
-  <p>doing so will allow us to provide you with weather data for your inspections!</p>
-  <%= f.date_select :creation_date, label: 'hive name'  %>
-  <%= f.select :creation_method, [["package", "package"], ["split", "split"], ["swarm", "swarm"]], label: 'creation method' %>
-  <%= f.text_field :breed  %>
-  <%= f.select :hive_type, [["langstroth", "langstroth"], ["top-bar", "top-bar"], ["warre", "warre"]], label: 'type' %>
-  <%= f.number_field :supers %>
-  <%= f.text_field :notes%>
-  <%= f.primary "add hive" %>
-<% end %>
+<%= render partial: 'form' %>
