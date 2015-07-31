@@ -1,14 +1,14 @@
-<h2 style='text-align: center'>beekeeping</h2>
+<div class='center'>
+  <h2 style='text-align: center'>beekeeping</h2>
+  <p>need some advice on beekeeping through the seasons?</p>
+  <p>use this handy reference to learn more about your beekeeping duties each month</p>
+  <p> select a month to learn about activities on the beekeeping calendar</p>
 
-<p style='text-align: center'>select a month to learn about activities on the beekeeping calendar</p>
+  <%= form_tag("/search", method: "get") do %>
+    <%= select_tag(:q,  options_for_select(['january', 'february', 'march', 'april', 'may', 'june', 'july', 'augsut', 'september', 'october', 'november', 'december'], selected: :option)) %>
+    <%= submit_tag("tell me about beekeeping this month",:class => 'js-month light-blue lighten-2 btn') %>
+  <% end %>
+</div>
 
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "search for a month:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("search month",:class => 'js-month light-blue lighten-2 btn') %>
-<% end %>
-
-
-
-<div id='month-text'> </div>
+<div id='month-text' style='text-align: justify'></div>
 

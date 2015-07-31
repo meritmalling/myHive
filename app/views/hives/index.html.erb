@@ -2,19 +2,34 @@
   <h2>myHives</h2>
   <%= link_to 'add new hive', new_hive_path%>
 </div>
-  <% @hives.each do |h| %>
-    <% if h.hive_owner @current_user %>
-
-      <ul>
-        <li>
-          <h5><b><%= "#{h.nickname}" %></b></h5>
-            <%= link_to "view ", hive_path(h) %> |
-            <%= link_to "edit ", edit_hive_path(h) %> |
-            <%= link_to "delete ", h, method:'delete'%> |
-            <%= link_to "add inspection", new_hive_inspection_path(h) %>
-        </li>
+<div class='center'>
+  <table class="table task-table">
+    <thead>
+      <th>view your hive</th>
+      <th>edit hive setup</th>
+      <th>delete hive</th>
+      <th>new hive inspection</th>
+    </thead>
+    <tbody>
+    <% @hives.each do |h| %>
+      <% if h.hive_owner @current_user %>
+      <td><%= link_to "#{h.nickname}", hive_path(h) %></td>
+      <td>
+        <%= link_to edit_hive_path(h) do %>
+          <i class="material-icons">assignment</i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to h, method:'delete' do %>
+          <i class="material-icons">assignment_late</i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to new_hive_inspection_path(h) do %>
+          <i class="material-icons">assignment_ind</i>
+        <% end %>
+      </tr>
       </ul>
     <% end %>
 <% end %>
-
 </div>

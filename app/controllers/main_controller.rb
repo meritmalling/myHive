@@ -7,12 +7,10 @@ def about
 end
 
 def beekeeping
-  # render json: params
   @month = params[:q]
   if @month
     @info = month_info(@month).text
     gon.monthinfo = @info
-    p @month
   end
 end
 

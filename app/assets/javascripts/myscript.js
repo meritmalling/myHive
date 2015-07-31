@@ -7,6 +7,7 @@ $ (function(){
 
   $(document).ready(function(){
     $('#month-text').append(gon.monthinfo)
+    console.log(gon.monthinfo)
   });
 
   // $('.js-month').on('click', function(e) {

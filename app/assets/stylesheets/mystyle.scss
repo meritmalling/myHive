@@ -7,10 +7,25 @@ body {
   width: 250px;
   text-align: center;
 }
+#beeart{
+  height: 70px;
+}
 #inspection-graphs span{
   display: inline-block;
 }
 .thumb-active{
   background-color: red;
   color: red;
+}
+#month-text{
+  text-align: justify;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.center {
+  text-align: center;
+}
+#i-title{
+  maring-bottom: 15px;
 }

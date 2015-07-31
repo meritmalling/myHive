@@ -8,5 +8,5 @@
   <%= f.select :hive_type, [["langstroth", "langstroth"], ["top-bar", "top-bar"], ["warre", "warre"]], placeholder: 'type' %>
   <%= f.number_field :supers, placeholder: 'number of supers' %>
   <%= f.text_field :notes, placeholder: 'notes' %>
-  <%= f.submit %>
+  <%= f.submit 'save hive', :class => 'light-blue lighten-2 btn' %>
 <% end %>
