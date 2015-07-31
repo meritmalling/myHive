@@ -2,13 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rest-client'
 
-gem 'awesome_print'
-
 gem 'gon'
 
 gem 'rails_12factor', group: :production
 
-gem 'bootstrap_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record

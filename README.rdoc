@@ -1,28 +1,16 @@
-== README
+myHive
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+myHive came to me as an idea in my first year of beekeeping.
 
-Things you may want to cover:
+After learning about the importance of inspection records, and knowing from experience how frustrating it is not to understand what is happening in your colony, I decided to create a tool to help the hobbyist/backyard beekeeper track their observations and learn what's happening in their hive.
 
-* Ruby version
+Up next:
+- expand tracking options: pests, more weather options (change weather API)
+- reminders
+- add more resources to beekeping (monthly information by location on honeyflow)
+- forum to connect with others locally
+- data for your area
+- user preferences - turn on/off what you track
+- styling!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This is a ruby on rails project with help from styling help from materialize and charts.js.
