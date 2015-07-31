@@ -1,3 +1,18 @@
+<h2 style='text-align: center'>beekeeping</h2>
 
-<h2 style='text-align: center'>beekeeeping</h2>
+<p style='text-align: center'>select a month to learn about activities on the beekeeping calendar</p>
+  <%= bootstrap_form_for url: beekeeping_path do |f| %>
+  <%= f.text_field :q , label: 'whatevs' %>
+  <%= f.submit 'search' %>
+<% end %>
+
+<div id='month-text'> </div>
+<div id="modal3" class="modal modal-fixed-footer">
+  <div class="modal-content">
+   <div class="modal-content">
+      <%= @info %>
+    </div>
+  </div>
+</div>
+
 

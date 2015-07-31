@@ -1,5 +1,54 @@
 $ (function(){
 
+  $('.js-month').on('click', function(e){
+    e.preventDefault()
+    $('#month-text').append(gon.monthinfo)
+  });
+
+  // $('.js-month').on('click', function(e) {
+  //     e.preventDefault()
+  //     var dropdown = $('.select-dropdown').val()
+
+   //   $.ajax({
+   //   type: "POST",
+   //   url: '/beekeeping'
+   //   data: dropdown
+   //    });
+   // });
+
+
+
+
+//   $('.js-month').on('click', function(e) {
+//       e.preventDefault()
+
+//       $('#month-text').val()
+
+//       $('.select-dropdown').val()
+
+//     var dropdown = $('.select-dropdown').val()
+//     console.log($('.select-dropdown').val())
+//     var myUrl = "http://www.utahcountybeekeepers.org/" + dropdown + ".html";
+
+//   // $.get(myUrl, function(data){
+//   //   console.log(data);
+//   // })
+
+
+// $.ajax({
+//   type: 'GET',
+//   url: myUrl,
+//   datatype: 'html',
+//   sucess: function(result){
+//     console.log(result)
+//   },
+// })
+
+
+
+//     });
+
+
   $('#myModal').on('hidden.bs.modal', function() {
       $(this).removeData('bs.modal');
   });
@@ -229,5 +278,7 @@ myNewChart = new Chart($("#canvas11").get(0).getContext("2d")).Line(data11);
 myNewChart = new Chart($("#canvas12").get(0).getContext("2d")).Line(data12);
 
 }
+
+
 });
 
