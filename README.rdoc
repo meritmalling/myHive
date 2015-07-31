@@ -10,7 +10,7 @@ The essential function of myHive is data tracking. It's a place to store all of 
 
 My original wireframes and user stories can be found here:
 
-up next:
+Next:
 - expand tracking options: pests, more weather options (change weather API)
 - use cloudinary to be able to store photos of your hive inspections
 - reminders
