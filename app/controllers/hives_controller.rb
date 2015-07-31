@@ -30,10 +30,6 @@ class HivesController < ApplicationController
     @hive.update hive_params
     if @hive
       @hive.save
-      flash[:sucess] = "hive updated"
-      redirect_to hives_path
-    else
-      flash[:danger] = "sorry please check your update fields"
       redirect_to hives_path
     end
   end

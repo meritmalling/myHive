@@ -20,14 +20,14 @@ class InspectionsController < ApplicationController
    def create
     hive = Hive.find(params[:hive_id])
     @inspection = hive.inspections.create inspection_params
-    redirect_to hives_path
+    redirect_to hive_path(hive)
    end
 
    def destroy
-
+    hive = Hive.find(params[:hive_id])
     @inspection = Inspection.find(params[:id])
     @inspection.destroy
-    redirect_to hives_path
+    redirect_to hive_path(hive)
    end
 
   def edit
@@ -41,11 +41,7 @@ class InspectionsController < ApplicationController
     @inspection.update inspection_params
     if @inspection
       @inspection.save
-      flash[:sucess] = "inspection updated"
-      redirect_to hives_path
-    else
-      flash[:danger] = "sorry please check your update fields"
-      redirect_to hives_path
+      redirect_to hive_path(@hive)
     end
   end
 
