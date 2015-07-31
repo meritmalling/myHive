@@ -1,7 +1,11 @@
 $ (function(){
 
   $('.js-month').on('click', function(e){
-    e.preventDefault()
+    e.preventDefault();
+    window.location.href = "/beekeeping?q=" + $('#q').val();
+  });
+
+  $(document).ready(function(){
     $('#month-text').append(gon.monthinfo)
   });
 
@@ -19,12 +23,12 @@ $ (function(){
 
 
 
-//   $('.js-month').on('click', function(e) {
-//       e.preventDefault()
+  // $('.js-month').on('click', function(e) {
+  //     e.preventDefault()
 
-//       $('#month-text').val()
+  //     $('#month-text').val()
 
-//       $('.select-dropdown').val()
+  //     $('.select-dropdown').val()
 
 //     var dropdown = $('.select-dropdown').val()
 //     console.log($('.select-dropdown').val())
