@@ -12,12 +12,14 @@ class HivesController < ApplicationController
 
    def create
     @current_user.hives.create hive_params
+    flash[:notice] = "hive created"
     redirect_to hives_path
    end
 
    def destroy
     @hive = Hive.find(params[:id])
     @hive.destroy
+    flash[:notice] = "hive deleted"
     redirect_to hives_path
    end
 
@@ -30,6 +32,7 @@ class HivesController < ApplicationController
     @hive.update hive_params
     if @hive
       @hive.save
+      flash[:notice] = "hive updated"
       redirect_to hives_path
     end
   end

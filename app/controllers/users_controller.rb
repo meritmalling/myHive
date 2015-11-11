@@ -8,7 +8,7 @@ end
 def create
   @user = User.create user_params
   if @user.persisted?
-    flash[:success] = "you've signed up for myHive!"
+    flash[:success] = "welcome to myHive!"
     redirect_to root_path
   else
     flash[:danger] = @user.errors.full_messages.uniq.to_sentence

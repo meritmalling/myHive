@@ -16,6 +16,10 @@
 <body>
   <%= render partial: 'layouts/navbar' %>
 
+  <% flash.each do |key, value| %>
+    <div class="alert"><%= value %></div>
+  <% end %>
+
   <div class='container'>
   <div class='col s6 offset-s6'>
   <%= yield %>
