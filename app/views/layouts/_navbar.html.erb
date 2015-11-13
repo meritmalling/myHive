@@ -1,17 +1,17 @@
-<nav>
+<nav class='z-depth-0'>
   <div class="nav-wrapper amber lighten-2">
     <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><%= link_to "myHives", hives_path%></li>
-      <li><%= link_to 'about', about_path%></li>
-      <li><%= link_to 'beekeeping', beekeeping_path%></li>
+      <li class='enlarge'><%= link_to "myHives", hives_path%></li>
+      <li class='enlarge'><%= link_to 'about', about_path%></li>
+      <li class='enlarge'><%= link_to 'beekeeping', beekeeping_path%></li>
     </ul>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li>
+      <li class='enlarge'>
         <% if @current_user %>
           <%= link_to "#{@current_user.email}", hives_path  %>
         <% end %>
       </li>
-      <li>
+      <li class='enlarge'>
         <% if @current_user %>
           <%= link_to "logout", logout_path %>
         <% end %>

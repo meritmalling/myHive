@@ -11,8 +11,10 @@ class HivesController < ApplicationController
    end
 
    def create
-    @current_user.hives.create hive_params
-    flash[:notice] = "hive created"
+    @newhive = @current_user.hives.create hive_params
+      if @newhive.persisted? then
+      flash[:notice] = "hive created"
+      end
     redirect_to hives_path
    end
 

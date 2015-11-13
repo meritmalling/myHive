@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       flash[:success] = "welcome back!"
       redirect_to hives_path
     else
-      flash[:success] = "sorry, something went wrong! please try logging in again"
+      flash[:success] = "oh no, we don't have a record that matches, please try again"
       redirect_to root_path
     end
   end

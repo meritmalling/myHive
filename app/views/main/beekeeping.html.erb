@@ -8,7 +8,7 @@
 
   <%= form_tag("/search", method: "get") do %>
     <%= select_tag(:q,  options_for_select(['january', 'february', 'march', 'april', 'may', 'june', 'july', 'augsut', 'september', 'october', 'november', 'december'], selected: :option)) %>
-    <%= submit_tag("tell me about beekeeping this month",:class => 'js-month light-blue lighten-2 btn') %>
+    <%= submit_tag("tell me about beekeeping this month",:class => 'z-depth-0 js-month light-blue lighten-2 btn') %>
   <% end %>
 </div>
 
